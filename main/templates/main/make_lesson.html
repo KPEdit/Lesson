@@ -1,0 +1,15 @@
+{% extends 'wrapper.html' %}
+{% block title %}
+<title>Lesson creation</title>
+{% endblock %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    {% for f in form %}
+        {% if not f.name == 'author' %}
+        <p>{{f.name}}{{f}}</p>
+        {% endif %}
+    {% endfor %}
+    <button type="submit">Send</button>
+</form>
+{% endblock %}

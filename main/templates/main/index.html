@@ -1,7 +1,32 @@
-{% extends 'base.html' %}
+{% extends 'wrapper.html' %}
 {% block title %}
-<title>Base page</title>
+<title>Lessons page</title>
 {% endblock %}
 {% block body %}
-<p>!!!HELLO, WORLD!!!</p>
+<div class="wrap">
+    <div class="main-page">
+        {% for l in lessons %}
+            <div class="lesson">
+                <div class="les-title">{{l.title}}</div>
+                <div class="les-content">{{l.content}}</div>
+                <div class="les-date">{{l.date}}</div>
+                <div class="les-author">{{l.author}}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="content">
+        <div class="logo"></div>
+        <div class="links">
+            {% for c in categories %}
+                <h3 class="category-name">{{c.name}}</h3>
+                {% for l in lessons %}
+                    {% if l.categ == c %}
+                        <a href="{{l.link}}" class="content-link">{{l.title}}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<a href="make_lesson">Создать урок</a>
 {% endblock %}
