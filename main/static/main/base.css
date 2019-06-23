@@ -66,7 +66,7 @@ div, p, a, h1,h2,h3,h4,h5,body {
   padding: 20px 20px;
   border-radius: 10px 0 0 10px;
   display: grid;
-  grid-template-rows: 180px 1fr 40px;
+  grid-template-rows: 180px 1fr 60px;
 }
 
 .content ul {
@@ -117,17 +117,37 @@ div, p, a, h1,h2,h3,h4,h5,body {
   transition: all ease-in-out .1s;
 }
 
-a.make-lesson {
-  text-decoration: none; 
-  color: #aaa;
-  padding-top: 19px;
-}
-a.make-lesson:visited {
-  color: #aaa;
+.external-links {
+  margin-top: 9px;
+  border-top: 2px solid #46dd6d;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
 }
 
-a.make-lesson:hover {
-  color: #aaa;
+.make {
+  text-align: center;
+
+}
+
+a.make {
+  padding: 10px 3px;
+  background: #98ce56;
+  border-radius: 20px;
+  box-shadow: 1px 1px 8px -2px #6aa;
+  text-decoration: none; 
+  color: #fff;
+  transition: all ease-in-out .1s;
+}
+a.make:visited {
+  color: #fff;
+  transition: all ease-in-out .1s;
+}
+
+a.make:hover {
+  color: #eee;
+  background: #8bf;
+  transition: all ease-in-out .1s;
 }
 
 

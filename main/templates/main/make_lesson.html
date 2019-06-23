@@ -3,13 +3,26 @@
 <title>Lesson creation</title>
 {% endblock %}
 {% block body %}
-<form method="post">
-    {% csrf_token %}
-    {% for f in form %}
-        {% if not f.name == 'author' %}
-        <p>{{f.name}}{{f}}</p>
-        {% endif %}
-    {% endfor %}
-    <button type="submit">Send</button>
-</form>
+<div class="heading">
+    <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+    </ul>
+</div>
+<div class="wrap">
+        <div class="info">
+            <h2>Создание нового урока</h2>
+            <form class="form form-lesson" method="post">
+                {% csrf_token %}
+                {% for f in form %}
+                {% if not f.name == 'author' %}
+                <p class="form-p">{{f.name.capitalize}}: {{f}}</p>
+                {% endif %}
+                {% endfor %}
+                <button type="submit">Создать</button>
+            </form>
+        </div>
+    {% include 'main/nav-bar.html' %}
+</div>
 {% endblock %}

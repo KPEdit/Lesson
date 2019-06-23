@@ -15,13 +15,14 @@
 <div class="wrap">
     <div class="lesson">
         <h2 class="les-title">{{cur_les.title}}</h2>
-        <div class="les-content">{{cur_les.content}}</div>
+        <div class="les-content">
+            {{cur_les.content|safe}}
+        </div>
         <div class="les-info">
             <div class="les-date">Время публикации: {{cur_les.date}}</div>
             <div class="les-author">Автор: {{cur_les.author}}</div>
         </div>
     </div>
     {% include 'main/nav-bar.html' %}
-    </div>
 </div>
 {% endblock %}
