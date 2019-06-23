@@ -5,6 +5,9 @@ from . import forms, models
 
 # Create your views here.
 
+# переписать index на page
+# index должен содержать главную инфу о сайте и оглавление
+# в page должно быть все то, что я написал для индекса, кроме выведения ВСЕХ УРОКОВ
 def index(request):
     les = models.Lesson.objects.all()
     cat = models.Category.objects.all()
@@ -24,6 +27,16 @@ def make_lesson(request):
 
     form = forms.LessonForm()
     return render(request, 'main/make_lesson.html', {'form':form})
+
+def lesson(request, link):
+    cur_les = models.Lesson.objects.get(link=link)
+    if cur_les:
+        les = models.Lesson.objects.all()
+        cat = models.Category.objects.all()
+        return render(request, 'main/lesson.html', context={'lessons':les,
+                                                            'categories':cat,
+                                                            'cur_les':cur_les})
+    return render(request, '404.html')
 
 def generate_link(title):
     k = title.split(" ")
