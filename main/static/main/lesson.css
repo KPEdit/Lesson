@@ -1,0 +1,40 @@
+.wrap {
+
+}
+
+.lesson {
+
+}
+
+.les-title {
+  color: #3fc540;
+  font-size: 2.4em;
+
+  text-shadow: 1px 1px #6b73c9;
+  font-family: serif;
+  padding-left: 30px;
+}
+
+.les-content {
+  color: #262626;
+  font-family: Arial;
+  margin: 0 0 20px 0;
+  font-size: 1.3em;
+}
+
+.les-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.les-date {
+  color: #aaa;
+  font-style: italic;
+  margin: 0 50px;
+}
+
+.les-author {
+  color: #aaa;
+  font-style: italic
+}

@@ -1,0 +1,27 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}
+<title>{{cur_les.title}}</title>
+<link rel="stylesheet" href="{% static 'main/lesson.css' %}">
+{% endblock %}
+{% block body %}
+<div class="heading">
+    <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+    </ul>
+</div>
+<div class="wrap">
+    <div class="lesson">
+        <h2 class="les-title">{{cur_les.title}}</h2>
+        <div class="les-content">{{cur_les.content}}</div>
+        <div class="les-info">
+            <div class="les-date">Время публикации: {{cur_les.date}}</div>
+            <div class="les-author">Автор: {{cur_les.author}}</div>
+        </div>
+    </div>
+    {% include 'main/nav-bar.html' %}
+    </div>
+</div>
+{% endblock %}

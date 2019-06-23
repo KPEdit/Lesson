@@ -1,0 +1,22 @@
+{% load static %}
+{% block nav %}
+<div class="content">
+    <div class="logo">
+        <img class="logo-img" src="{% static 'main/logo.png' %}">
+    </div>
+    <div class="links">
+        {% for c in categories %}
+        <h3 class="category-name">{{c.name}}</h3>
+        <ul>
+            {% for l in lessons %}
+            {% if l.categ == c %}
+            <li class="content-link"><a href="/lesson/{{l.link}}">{{l.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+    </div>
+    <a class="make-lesson" href="/make_lesson">Добавить урок</a>
+</div>
+{% endblock %}
